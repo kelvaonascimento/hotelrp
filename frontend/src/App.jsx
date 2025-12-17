@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   LayoutDashboard, Building2, Calendar, Hotel, TrendingUp,
-  Menu, X, RefreshCw, Wifi, WifiOff, FileText
+  Menu, X, RefreshCw, Wifi, WifiOff, FileText, BarChart3
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -11,6 +11,7 @@ import EventosTimeline from './components/EventosTimeline';
 import ConcorrenciaPanel from './components/ConcorrenciaPanel';
 import ProjecoesPanel from './components/ProjecoesPanel';
 import ResumoExecutivo from './components/ResumoExecutivo';
+import SazonalidadePanel from './components/SazonalidadePanel';
 import { analyticsApi } from './services/api';
 import { DADOS_VIABILIDADE } from './data/constants';
 
@@ -20,6 +21,7 @@ const NAV_ITEMS = [
   { id: 'empresas', label: 'Mercado', icon: Building2 },
   { id: 'eventos', label: 'Eventos', icon: Calendar },
   { id: 'concorrencia', label: 'Concorrencia', icon: Hotel },
+  { id: 'sazonalidade', label: 'Ocupacao', icon: BarChart3 },
   { id: 'projecoes', label: 'Projecoes', icon: TrendingUp }
 ];
 
@@ -86,6 +88,8 @@ function App() {
         return <EventosTimeline />;
       case 'concorrencia':
         return <ConcorrenciaPanel />;
+      case 'sazonalidade':
+        return <SazonalidadePanel />;
       case 'projecoes':
         return <ProjecoesPanel data={data} />;
       default:
