@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { cn } from '@/lib/utils';
-import { DADOS_VIABILIDADE } from '../data/constants';
+import { DADOS_VIABILIDADE, HOTEL_PROPOSTO, LEITOS_RIBEIRAO_PIRES, QUARTOS_RIBEIRAO_PIRES } from '../data/constants';
 
 function KPICard({ title, value, subtitle, icon: Icon, trend, className }) {
   return (
@@ -147,8 +147,8 @@ function GapCard({ visitors, beds }) {
 
         <div className="mt-4 pt-4 border-t border-primary-foreground/20">
           <p className="text-sm text-primary-foreground/90">
-            <strong>Conclusao:</strong> Viabilidade de mercado FORTE. O novo hotel com 55 quartos
-            aumentaria a oferta local em 40%, atendendo demanda reprimida.
+            <strong>Conclusao:</strong> Viabilidade de mercado FORTE. O novo hotel com {HOTEL_PROPOSTO.quartos} quartos
+            aumentaria a oferta local em {Math.round((HOTEL_PROPOSTO.quartos / QUARTOS_RIBEIRAO_PIRES) * 100)}%, atendendo demanda reprimida.
           </p>
         </div>
       </CardContent>
@@ -267,8 +267,8 @@ function Dashboard({ data }) {
 
       {/* Quick Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <StatCard value="R$ 280" label="Diaria Target" />
-        <StatCard value="55" label="Quartos Projetados" />
+        <StatCard value={`R$ ${HOTEL_PROPOSTO.diaria_target}`} label="Diaria Target" />
+        <StatCard value={HOTEL_PROPOSTO.quartos} label="Quartos Projetados" />
         <StatCard value="60%" label="Ocupacao Moderada" />
         <StatCard value="R$ 37M" label="Impacto Turismo 2025" />
       </div>

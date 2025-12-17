@@ -12,6 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { HOTEIS_DETALHADOS } from '../data/constants';
 
 // Dados de ocupação mensal - Estado de São Paulo (ABIH-SP/FOHB 2024)
 const OCUPACAO_MENSAL = [
@@ -42,115 +43,26 @@ const OCUPACAO_SEMANAL = [
   { dia: 'Sab', ocupacao: 42, tipo: 'lazer' },
 ];
 
-// Benchmark de hotéis da região com tarifas (fonte: Booking, Kayak - Dez/2025)
-// Nota: Tarifas são dados reais de OTAs. Ocupação específica por hotel não é pública.
-const HOTEIS_REGIAO = [
-  {
-    nome: 'Hotel Pilar',
-    cidade: 'Ribeirao Pires',
-    categoria: '3 estrelas',
-    quartos: 75,
-    avaliacao: 7.5,
-    fonte: 'TripAdvisor',
-    tarifas: {
-      semana: 280,
-      fimDeSemana: 350,
-      altaTemporada: 400,
-      baixaTemporada: 250,
-    },
-    perfil: 'Lazer/Eventos',
+// Benchmark de hotéis da região - USANDO DADOS VERIFICADOS DO constants.js
+// Avaliações: constants.js (Booking.com verificado Dez/2025)
+// Tarifas: Referência OTAs (variam conforme data/disponibilidade)
+const HOTEIS_REGIAO = HOTEIS_DETALHADOS.map(h => ({
+  nome: h.nome,
+  cidade: h.cidade,
+  categoria: h.categoria,
+  quartos: h.quartos,
+  avaliacao: h.avaliacao, // Booking.com verificado
+  fonte: h.fonte,
+  // Tarifas são REFERENCIAIS - não verificadas individualmente
+  tarifas: {
+    semana: null, // Removido - não verificado
+    fimDeSemana: null,
+    altaTemporada: null,
+    baixaTemporada: null,
   },
-  {
-    nome: 'Hotel WR',
-    cidade: 'Ribeirao Pires',
-    categoria: 'Economico',
-    quartos: 10,
-    avaliacao: null,
-    fonte: 'Prefeitura RP',
-    tarifas: {
-      semana: 200,
-      fimDeSemana: 260,
-      altaTemporada: 280,
-      baixaTemporada: 180,
-    },
-    perfil: 'Corporativo',
-  },
-  {
-    nome: 'Hotel Infinity',
-    cidade: 'Maua',
-    categoria: '3 estrelas',
-    quartos: 50,
-    avaliacao: 8.2,
-    fonte: 'Kayak',
-    tarifas: {
-      semana: 234,
-      fimDeSemana: 280,
-      altaTemporada: 310,
-      baixaTemporada: 200,
-    },
-    perfil: 'Corporativo',
-  },
-  {
-    nome: 'Villa Brites',
-    cidade: 'Maua',
-    categoria: '3 estrelas',
-    quartos: 30,
-    avaliacao: 8.9,
-    fonte: 'Kayak',
-    tarifas: {
-      semana: 261,
-      fimDeSemana: 310,
-      altaTemporada: 350,
-      baixaTemporada: 220,
-    },
-    perfil: 'Misto',
-  },
-  {
-    nome: 'Hospedaria Eden',
-    cidade: 'Maua',
-    categoria: 'Economico',
-    quartos: 20,
-    avaliacao: 7.0,
-    fonte: 'Kayak',
-    tarifas: {
-      semana: 136,
-      fimDeSemana: 170,
-      altaTemporada: 190,
-      baixaTemporada: 110,
-    },
-    perfil: 'Economico',
-  },
-  {
-    nome: 'Ibis Santo Andre',
-    cidade: 'Santo Andre',
-    categoria: '3 estrelas',
-    quartos: 126,
-    avaliacao: 8.3,
-    fonte: 'Kayak',
-    tarifas: {
-      semana: 276,
-      fimDeSemana: 310,
-      altaTemporada: 350,
-      baixaTemporada: 240,
-    },
-    perfil: 'Corporativo',
-  },
-  {
-    nome: 'Plaza Mayor',
-    cidade: 'Santo Andre',
-    categoria: '4 estrelas',
-    quartos: 80,
-    avaliacao: 9.0,
-    fonte: 'Kayak',
-    tarifas: {
-      semana: 359,
-      fimDeSemana: 420,
-      altaTemporada: 480,
-      baixaTemporada: 300,
-    },
-    perfil: 'Executivo',
-  },
-];
+  perfil: h.cidade === 'Santo Andre' ? 'Corporativo' : 'Misto',
+  distancia: h.raio === 0 ? '0 km' : h.raio === 10 ? '10 km' : '15 km',
+}));
 
 // Eventos de Ribeirão Pires e impacto na ocupação
 // Nota: Impactos são ESTIMATIVAS baseadas em padrões do setor hoteleiro em destinos turísticos
@@ -390,11 +302,11 @@ function SazonalidadePanel() {
         </Card>
       </div>
 
-      {/* Benchmark de Tarifas */}
+      {/* Benchmark de Hotéis - DADOS VERIFICADOS */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Benchmark de Tarifas - Regiao ABC</CardTitle>
-          <CardDescription>Comparativo de diarias por periodo e hotel</CardDescription>
+          <CardTitle className="text-base">Hoteis da Regiao - Dados Verificados</CardTitle>
+          <CardDescription>Fonte: Booking.com (Dez/2025) - Avaliacoes e quartos verificados</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
@@ -403,31 +315,8 @@ function SazonalidadePanel() {
                 <tr className="border-b bg-muted/50">
                   <th className="text-left py-3 px-3 font-medium">Hotel</th>
                   <th className="text-left py-3 px-3 font-medium">Cidade</th>
+                  <th className="text-center py-3 px-3 font-medium">Quartos</th>
                   <th className="text-center py-3 px-3 font-medium">Avaliacao</th>
-                  <th className="text-right py-3 px-3 font-medium">
-                    <div className="flex items-center justify-end gap-1">
-                      <Clock className="h-3 w-3" />
-                      Semana
-                    </div>
-                  </th>
-                  <th className="text-right py-3 px-3 font-medium">
-                    <div className="flex items-center justify-end gap-1">
-                      <Calendar className="h-3 w-3" />
-                      Fim de Semana
-                    </div>
-                  </th>
-                  <th className="text-right py-3 px-3 font-medium">
-                    <div className="flex items-center justify-end gap-1">
-                      <Sun className="h-3 w-3" />
-                      Alta Temp.
-                    </div>
-                  </th>
-                  <th className="text-right py-3 px-3 font-medium">
-                    <div className="flex items-center justify-end gap-1">
-                      <Snowflake className="h-3 w-3" />
-                      Baixa Temp.
-                    </div>
-                  </th>
                   <th className="text-center py-3 px-3 font-medium">Fonte</th>
                 </tr>
               </thead>
@@ -441,19 +330,16 @@ function SazonalidadePanel() {
                       </div>
                     </td>
                     <td className="py-3 px-3 text-muted-foreground">{hotel.cidade}</td>
+                    <td className="py-3 px-3 text-center font-medium">{hotel.quartos}</td>
                     <td className="py-3 px-3 text-center">
                       {hotel.avaliacao ? (
                         <Badge variant={hotel.avaliacao >= 8.5 ? 'default' : 'secondary'}>
                           {hotel.avaliacao}
                         </Badge>
                       ) : (
-                        <span className="text-muted-foreground">Novo</span>
+                        <span className="text-muted-foreground">-</span>
                       )}
                     </td>
-                    <td className="py-3 px-3 text-right">R$ {hotel.tarifas.semana}</td>
-                    <td className="py-3 px-3 text-right font-medium">R$ {hotel.tarifas.fimDeSemana}</td>
-                    <td className="py-3 px-3 text-right text-orange-600">R$ {hotel.tarifas.altaTemporada}</td>
-                    <td className="py-3 px-3 text-right text-blue-600">R$ {hotel.tarifas.baixaTemporada}</td>
                     <td className="py-3 px-3 text-center">
                       <span className="text-xs text-muted-foreground">{hotel.fonte}</span>
                     </td>
@@ -464,50 +350,28 @@ function SazonalidadePanel() {
                   <td className="py-3 px-3">
                     <div>
                       <p className="font-bold text-primary">Hotel RP (proposto)</p>
-                      <p className="text-xs text-muted-foreground">Upscale</p>
+                      <p className="text-xs text-muted-foreground">4 estrelas</p>
                     </div>
                   </td>
                   <td className="py-3 px-3 text-muted-foreground">Ribeirao Pires</td>
+                  <td className="py-3 px-3 text-center font-bold text-primary">65</td>
                   <td className="py-3 px-3 text-center">
                     <Badge>Novo</Badge>
                   </td>
-                  <td className="py-3 px-3 text-right">
-                    R$ {PROJECAO_HOTEL_RP.tarifas.semana.min}-{PROJECAO_HOTEL_RP.tarifas.semana.max}
-                  </td>
-                  <td className="py-3 px-3 text-right font-bold">
-                    R$ {PROJECAO_HOTEL_RP.tarifas.fimDeSemana.min}-{PROJECAO_HOTEL_RP.tarifas.fimDeSemana.max}
-                  </td>
-                  <td className="py-3 px-3 text-right text-orange-600 font-bold">
-                    R$ {PROJECAO_HOTEL_RP.tarifas.altaTemporada.min}-{PROJECAO_HOTEL_RP.tarifas.altaTemporada.max}
-                  </td>
-                  <td className="py-3 px-3 text-right text-blue-600">
-                    R$ {PROJECAO_HOTEL_RP.tarifas.baixaTemporada.min}-{PROJECAO_HOTEL_RP.tarifas.baixaTemporada.max}
-                  </td>
                   <td className="py-3 px-3 text-center">
-                    <span className="text-xs text-muted-foreground">Projecao</span>
+                    <span className="text-xs text-muted-foreground">Projeto</span>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          {/* Análise de variação */}
-          <div className="grid md:grid-cols-3 gap-4 mt-6 pt-4 border-t">
-            <div className="p-4 bg-orange-50 dark:bg-orange-950/30 rounded-lg">
-              <p className="text-sm font-medium text-orange-700 dark:text-orange-400">Variacao Fim de Semana</p>
-              <p className="text-2xl font-bold text-orange-600">+15% a +25%</p>
-              <p className="text-xs text-muted-foreground mt-1">Em relacao a dias de semana</p>
-            </div>
-            <div className="p-4 bg-red-50 dark:bg-red-950/30 rounded-lg">
-              <p className="text-sm font-medium text-red-700 dark:text-red-400">Premium Alta Temporada</p>
-              <p className="text-2xl font-bold text-red-600">+30% a +50%</p>
-              <p className="text-xs text-muted-foreground mt-1">Durante eventos principais</p>
-            </div>
-            <div className="p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg">
-              <p className="text-sm font-medium text-blue-700 dark:text-blue-400">Desconto Baixa Temporada</p>
-              <p className="text-2xl font-bold text-blue-600">-15% a -20%</p>
-              <p className="text-xs text-muted-foreground mt-1">Janeiro e Fevereiro</p>
-            </div>
+          {/* Nota sobre tarifas */}
+          <div className="mt-4 p-3 bg-amber-50 dark:bg-amber-950/30 rounded-lg border border-amber-200">
+            <p className="text-sm text-amber-800 dark:text-amber-200">
+              <strong>Nota:</strong> Tarifas de diarias variam significativamente conforme data, disponibilidade e canal de venda.
+              Consulte OTAs (Booking, Kayak) para valores atualizados. Diaria target Hotel RP: <strong>R$ 280</strong>.
+            </p>
           </div>
         </CardContent>
       </Card>

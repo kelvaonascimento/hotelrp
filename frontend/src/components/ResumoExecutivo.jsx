@@ -6,12 +6,19 @@ import {
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import {
+  HOTEL_PROPOSTO,
+  HOTEIS_DETALHADOS,
+  LEITOS_RIBEIRAO_PIRES,
+  QUARTOS_RIBEIRAO_PIRES,
+  TOTAL_EVENTOS_ANO
+} from '../data/constants';
 
 function ResumoExecutivo({ onNavigate }) {
   const kpisDestaque = [
-    { label: 'Visitantes/Ano', valor: '300 mil+', icon: Users, cor: 'text-blue-600' },
-    { label: 'Eventos Culturais/Ano', valor: '90+', icon: Calendar, cor: 'text-purple-600' },
-    { label: 'Leitos Disponiveis', valor: '~200', icon: Hotel, cor: 'text-orange-600' },
+    { label: 'Visitantes/Ano', valor: '315 mil', icon: Users, cor: 'text-blue-600' },
+    { label: 'Eventos (2026)', valor: TOTAL_EVENTOS_ANO.toString(), icon: Calendar, cor: 'text-purple-600' },
+    { label: 'Leitos Disponiveis', valor: LEITOS_RIBEIRAO_PIRES.toString(), icon: Hotel, cor: 'text-orange-600' },
     { label: 'Impacto Turistico 2025', valor: 'R$ 37 Mi', icon: TrendingUp, cor: 'text-green-600' },
   ];
 
@@ -123,7 +130,7 @@ function ResumoExecutivo({ onNavigate }) {
             <div className="bg-red-50 dark:bg-red-950/30 p-4 rounded-lg">
               <p className="text-sm font-medium text-red-700 dark:text-red-400">Problema</p>
               <p className="text-sm text-muted-foreground mt-1">
-                Apenas ~200 leitos para 300 mil visitantes/ano. Nao ha hotel upscale na cidade.
+                Apenas {LEITOS_RIBEIRAO_PIRES} leitos ({QUARTOS_RIBEIRAO_PIRES} quartos) para 300 mil visitantes/ano. Nao ha hotel upscale na cidade.
               </p>
             </div>
             <div className="bg-amber-50 dark:bg-amber-950/30 p-4 rounded-lg">
@@ -234,6 +241,9 @@ function ResumoExecutivo({ onNavigate }) {
       <Card>
         <CardHeader>
           <CardTitle className="text-lg">Benchmark de Tarifas - Regiao ABC</CardTitle>
+          <CardDescription className="text-xs">
+            * Tarifas de referencia obtidas em OTAs (Booking, Kayak). Valores variam conforme data e disponibilidade.
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
@@ -242,50 +252,31 @@ function ResumoExecutivo({ onNavigate }) {
                 <tr className="border-b bg-muted/50">
                   <th className="text-left py-2 px-3">Hotel</th>
                   <th className="text-left py-2 px-3">Cidade</th>
+                  <th className="text-center py-2 px-3">Quartos</th>
                   <th className="text-center py-2 px-3">Categoria</th>
-                  <th className="text-right py-2 px-3">Diaria Media</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b">
-                  <td className="py-2 px-3">Hotel Pilar</td>
-                  <td className="py-2 px-3 text-muted-foreground">Ribeirao Pires</td>
-                  <td className="py-2 px-3 text-center"><Badge variant="outline">3 estrelas</Badge></td>
-                  <td className="py-2 px-3 text-right font-medium">R$ 300</td>
-                </tr>
-                <tr className="border-b">
-                  <td className="py-2 px-3">Hotel WR</td>
-                  <td className="py-2 px-3 text-muted-foreground">Ribeirao Pires</td>
-                  <td className="py-2 px-3 text-center"><Badge variant="outline">Economico</Badge></td>
-                  <td className="py-2 px-3 text-right font-medium">R$ 230</td>
-                </tr>
-                <tr className="border-b">
-                  <td className="py-2 px-3">Hotel Infinity</td>
-                  <td className="py-2 px-3 text-muted-foreground">Maua</td>
-                  <td className="py-2 px-3 text-center"><Badge variant="outline">3 estrelas</Badge></td>
-                  <td className="py-2 px-3 text-right font-medium">R$ 240</td>
-                </tr>
-                <tr className="border-b">
-                  <td className="py-2 px-3">Villa Brites</td>
-                  <td className="py-2 px-3 text-muted-foreground">Maua</td>
-                  <td className="py-2 px-3 text-center"><Badge variant="outline">3 estrelas</Badge></td>
-                  <td className="py-2 px-3 text-right font-medium">R$ 250</td>
-                </tr>
-                <tr className="border-b">
-                  <td className="py-2 px-3">Plaza Mayor</td>
-                  <td className="py-2 px-3 text-muted-foreground">Santo Andre</td>
-                  <td className="py-2 px-3 text-center"><Badge variant="secondary">4 estrelas</Badge></td>
-                  <td className="py-2 px-3 text-right font-medium">R$ 390</td>
-                </tr>
+                {HOTEIS_DETALHADOS.filter(h => h.cidade === 'Ribeirao Pires' || h.nome === 'Villa Brites' || h.nome === 'Plaza Mayor').slice(0, 5).map((hotel, idx) => (
+                  <tr key={idx} className="border-b">
+                    <td className="py-2 px-3">{hotel.nome}</td>
+                    <td className="py-2 px-3 text-muted-foreground">{hotel.cidade}</td>
+                    <td className="py-2 px-3 text-center font-medium">{hotel.quartos}</td>
+                    <td className="py-2 px-3 text-center"><Badge variant="outline">{hotel.categoria}</Badge></td>
+                  </tr>
+                ))}
                 <tr className="border-b bg-primary/5">
-                  <td className="py-2 px-3 font-semibold">Hotel RP (proposto)</td>
-                  <td className="py-2 px-3 text-muted-foreground">Ribeirao Pires</td>
-                  <td className="py-2 px-3 text-center"><Badge>Upscale</Badge></td>
-                  <td className="py-2 px-3 text-right font-bold text-primary">R$ 250-350</td>
+                  <td className="py-2 px-3 font-semibold">{HOTEL_PROPOSTO.nome} (proposto)</td>
+                  <td className="py-2 px-3 text-muted-foreground">{HOTEL_PROPOSTO.cidade}</td>
+                  <td className="py-2 px-3 text-center font-bold text-primary">{HOTEL_PROPOSTO.quartos}</td>
+                  <td className="py-2 px-3 text-center"><Badge>{HOTEL_PROPOSTO.categoria}</Badge></td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <p className="text-xs text-muted-foreground mt-3">
+            Diaria target do Hotel RP: <strong>R$ {HOTEL_PROPOSTO.diaria_target}</strong> (posicionamento 4 estrelas)
+          </p>
         </CardContent>
       </Card>
 

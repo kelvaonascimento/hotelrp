@@ -44,9 +44,9 @@ function ProjecoesPanel({ data }) {
   ];
 
   const capacidadeHotel = {
-    quartos: hotelProposto.quartos || 55,
-    diariasAno: (hotelProposto.quartos || 55) * 365,
-    diarias60: Math.round((hotelProposto.quartos || 55) * 365 * 0.6)
+    quartos: hotelProposto.quartos || 65,
+    diariasAno: (hotelProposto.quartos || 65) * 365,
+    diarias60: Math.round((hotelProposto.quartos || 65) * 365 * 0.6)
   };
 
   const formatCurrency = (value) => {

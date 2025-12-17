@@ -52,7 +52,7 @@ function App() {
         projecoes: DADOS_VIABILIDADE.projecoes,
         sazonalidade: [],
         eventos_resumo: { total_eventos_ano: 127, publico_total_estimado: 315000 },
-        mercado: { leitos_ribeirao_pires: 200 },
+        mercado: { leitos_ribeirao_pires: DADOS_VIABILIDADE.kpis.leitos_disponiveis_cidade },
         hotel_proposto: DADOS_VIABILIDADE.hotel_proposto
       });
       setApiOnline(false);

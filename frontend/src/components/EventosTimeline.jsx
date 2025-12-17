@@ -106,7 +106,7 @@ function EventosTimeline() {
               <span className="text-sm font-medium">Total Eventos</span>
             </div>
             <p className="text-2xl font-bold">127</p>
-            <p className="text-xs text-muted-foreground mt-1">Calendario 2025/2026</p>
+            <p className="text-xs text-muted-foreground mt-1">Calendario 2026</p>
           </CardContent>
         </Card>
         <Card>
