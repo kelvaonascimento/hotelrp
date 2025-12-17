@@ -1,0 +1,176 @@
+{
+  "eventos": [
+    {
+      "id": 1,
+      "nome": "Festival do Chocolate",
+      "periodo": "Agosto",
+      "mes_inicio": 8,
+      "mes_fim": 8,
+      "publico_estimado": 180000,
+      "impacto_hotel": "alto",
+      "descricao": "Maior evento cultural e turistico da cidade. Em 2025 celebrou 20 anos com formato renovado no Centro. Atrai visitantes de toda a regiao metropolitana.",
+      "recorrente": true
+    },
+    {
+      "id": 2,
+      "nome": "Natal Magico",
+      "periodo": "Dezembro",
+      "mes_inicio": 12,
+      "mes_fim": 12,
+      "publico_estimado": 50000,
+      "impacto_hotel": "alto",
+      "descricao": "Decoracao natalina especial, apresentacoes culturais e eventos tematicos durante todo o mes de dezembro.",
+      "recorrente": true
+    },
+    {
+      "id": 3,
+      "nome": "Entoada Nordestina",
+      "periodo": "Marco",
+      "mes_inicio": 3,
+      "mes_fim": 3,
+      "publico_estimado": 25000,
+      "impacto_hotel": "medio",
+      "descricao": "Festival de cultura nordestina no Complexo Ayrton Senna com gastronomia tipica (baiao de dois, acaraje, bobo) e atracoes musicais.",
+      "recorrente": true
+    },
+    {
+      "id": 4,
+      "nome": "Festival Oriental",
+      "periodo": "Maio",
+      "mes_inicio": 5,
+      "mes_fim": 5,
+      "publico_estimado": 10000,
+      "impacto_hotel": "medio",
+      "descricao": "Celebracao da cultura oriental com tradicoes, sabores e expressoes artisticas do Oriente. Em 2025 teve sua 3a edicao.",
+      "recorrente": true
+    },
+    {
+      "id": 5,
+      "nome": "Festa Italiana",
+      "periodo": "Setembro",
+      "mes_inicio": 9,
+      "mes_fim": 9,
+      "publico_estimado": 23000,
+      "impacto_hotel": "medio",
+      "descricao": "Celebracao da cultura italiana com gastronomia, musica e tradicoes.",
+      "recorrente": true
+    },
+    {
+      "id": 6,
+      "nome": "Festa do Pilar",
+      "periodo": "Outubro",
+      "mes_inicio": 10,
+      "mes_fim": 10,
+      "publico_estimado": 10000,
+      "impacto_hotel": "medio",
+      "descricao": "Festa tradicional religiosa e cultural da cidade.",
+      "recorrente": true
+    },
+    {
+      "id": 7,
+      "nome": "FLIRP - Feira Literaria",
+      "periodo": "Setembro",
+      "mes_inicio": 9,
+      "mes_fim": 9,
+      "publico_estimado": 5000,
+      "impacto_hotel": "medio",
+      "descricao": "Feira Literaria de Ribeirao Pires com homenagens a autores brasileiros, debates e lancamentos.",
+      "recorrente": true
+    },
+    {
+      "id": 8,
+      "nome": "Rock This Town",
+      "periodo": "Variavel",
+      "mes_inicio": 6,
+      "mes_fim": 6,
+      "publico_estimado": 5000,
+      "impacto_hotel": "baixo",
+      "descricao": "Festival de rock com bandas locais e regionais.",
+      "recorrente": true
+    },
+    {
+      "id": 9,
+      "nome": "Festa de Santo Antonio",
+      "periodo": "Junho",
+      "mes_inicio": 6,
+      "mes_fim": 6,
+      "publico_estimado": 10000,
+      "impacto_hotel": "medio",
+      "descricao": "Festa junina tradicional com quadrilhas, comidas tipicas e arraial.",
+      "recorrente": true
+    },
+    {
+      "id": 10,
+      "nome": "Carnaval",
+      "periodo": "Fevereiro/Marco",
+      "mes_inicio": 2,
+      "mes_fim": 3,
+      "publico_estimado": 15000,
+      "impacto_hotel": "medio",
+      "descricao": "Desfiles e blocos de carnaval na cidade.",
+      "recorrente": true
+    },
+    {
+      "id": 11,
+      "nome": "Eventos Esportivos",
+      "periodo": "Anual",
+      "mes_inicio": 1,
+      "mes_fim": 12,
+      "publico_estimado": 10000,
+      "impacto_hotel": "baixo",
+      "descricao": "Competicoes esportivas diversas ao longo do ano, incluindo trilhas e corridas.",
+      "recorrente": true
+    },
+    {
+      "id": 12,
+      "nome": "Ecoturismo e Trilhas",
+      "periodo": "Anual",
+      "mes_inicio": 1,
+      "mes_fim": 12,
+      "publico_estimado": 20000,
+      "impacto_hotel": "medio",
+      "descricao": "Turismo ecologico com trilhas na Serra do Mar, represa Billings e areas de preservacao.",
+      "recorrente": true
+    },
+    {
+      "id": 13,
+      "nome": "Turismo Religioso",
+      "periodo": "Anual",
+      "mes_inicio": 1,
+      "mes_fim": 12,
+      "publico_estimado": 8000,
+      "impacto_hotel": "baixo",
+      "descricao": "Visitas a Torre de Miroku e outros pontos de turismo religioso.",
+      "recorrente": true
+    },
+    {
+      "id": 14,
+      "nome": "Rota do Cambuci",
+      "periodo": "Fevereiro",
+      "mes_inicio": 2,
+      "mes_fim": 2,
+      "publico_estimado": 5000,
+      "impacto_hotel": "baixo",
+      "descricao": "Festival gastronomico focado no cambuci, fruta tipica da Mata Atlantica.",
+      "recorrente": true
+    },
+    {
+      "id": 15,
+      "nome": "Encontro de Carros Antigos",
+      "periodo": "Variavel",
+      "mes_inicio": 4,
+      "mes_fim": 4,
+      "publico_estimado": 3000,
+      "impacto_hotel": "baixo",
+      "descricao": "Exposicao de veiculos antigos e classicos.",
+      "recorrente": true
+    }
+  ],
+  "resumo": {
+    "total_eventos_ano": 127,
+    "publico_total_estimado": 315000,
+    "impacto_economico_2025": 37000000,
+    "posicao_ranking_estancias": 8,
+    "investimento_prefeitura_turismo": 5000000
+  }
+}

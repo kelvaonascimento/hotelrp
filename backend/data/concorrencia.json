@@ -1,0 +1,139 @@
+{
+  "hoteis": [
+    {
+      "id": 1,
+      "nome": "Hotel Estancia Pilar",
+      "cidade": "Ribeirao Pires",
+      "quartos": 75,
+      "leitos": 150,
+      "diaria_media": 300.0,
+      "nota_avaliacao": 7.5,
+      "tipo": "hotel-fazenda",
+      "distancia_km": 5.0,
+      "diferenciais": ["area de lazer", "piscina", "salao eventos 200 pessoas", "natureza"],
+      "observacoes": "Localizado no bairro Quarta Divisao, area afastada. Atende especialmente publico de lazer e retiros religiosos. Algumas avaliacoes mencionam custo alto para qualidade entregue."
+    },
+    {
+      "id": 2,
+      "nome": "Hotel WR",
+      "cidade": "Ribeirao Pires",
+      "quartos": 10,
+      "leitos": 20,
+      "diaria_media": 230.0,
+      "nota_avaliacao": null,
+      "tipo": "hotel",
+      "distancia_km": 3.0,
+      "diferenciais": ["novo", "moderno"],
+      "observacoes": "Recem-inaugurado em 2025, localizado na rodovia Indio Tibirica junto a posto de servicos. No primeiro mes hospedou mais de 80 hospedes, demonstrando demanda reprimida."
+    },
+    {
+      "id": 3,
+      "nome": "Pousada Vale do Sol",
+      "cidade": "Ribeirao Pires",
+      "quartos": 20,
+      "leitos": 40,
+      "diaria_media": 150.0,
+      "nota_avaliacao": 7.0,
+      "tipo": "pousada",
+      "distancia_km": 4.0,
+      "diferenciais": ["preco acessivel", "familiar"],
+      "observacoes": "Pousada de pequeno porte para publico economico."
+    },
+    {
+      "id": 4,
+      "nome": "Hotel Infinity",
+      "cidade": "Maua",
+      "quartos": 50,
+      "leitos": 100,
+      "diaria_media": 240.0,
+      "nota_avaliacao": 8.1,
+      "tipo": "hotel",
+      "distancia_km": 10.0,
+      "diferenciais": ["corporativo", "bem avaliado", "alta ocupacao"],
+      "observacoes": "Hotel 3 estrelas corporativo em Maua. Alta ocupacao e boas avaliacoes (300+). Capta parte da demanda de Ribeirao Pires."
+    },
+    {
+      "id": 5,
+      "nome": "Hotel Villa Brites",
+      "cidade": "Maua",
+      "quartos": 30,
+      "leitos": 60,
+      "diaria_media": 250.0,
+      "nota_avaliacao": 8.9,
+      "tipo": "hotel",
+      "distancia_km": 12.0,
+      "diferenciais": ["bem avaliado", "tradicional"],
+      "observacoes": "Hotel 3 estrelas tradicional de Maua com excelente avaliacao."
+    },
+    {
+      "id": 6,
+      "nome": "Hotel Ouro de Maua",
+      "cidade": "Maua",
+      "quartos": 25,
+      "leitos": 50,
+      "diaria_media": 120.0,
+      "nota_avaliacao": 6.5,
+      "tipo": "hotel",
+      "distancia_km": 11.0,
+      "diferenciais": ["economico"],
+      "observacoes": "Opcao economica em Maua."
+    },
+    {
+      "id": 7,
+      "nome": "Hotel Plaza Mayor",
+      "cidade": "Santo Andre",
+      "quartos": 80,
+      "leitos": 160,
+      "diaria_media": 390.0,
+      "nota_avaliacao": 8.0,
+      "tipo": "hotel",
+      "distancia_km": 15.0,
+      "diferenciais": ["4 estrelas", "centro", "eventos corporativos"],
+      "observacoes": "Hotel 4 estrelas no centro de Santo Andre. Recebe eventos corporativos. Referencia para segmento superior no ABC."
+    },
+    {
+      "id": 8,
+      "nome": "Bristol ABC Paulista",
+      "cidade": "Santo Andre",
+      "quartos": 100,
+      "leitos": 200,
+      "diaria_media": 350.0,
+      "nota_avaliacao": 8.2,
+      "tipo": "hotel",
+      "distancia_km": 16.0,
+      "diferenciais": ["rede Bristol", "executivo"],
+      "observacoes": "Hotel de rede com padrao executivo."
+    },
+    {
+      "id": 9,
+      "nome": "Ibis Budget Sao Caetano",
+      "cidade": "Sao Caetano do Sul",
+      "quartos": 120,
+      "leitos": 240,
+      "diaria_media": 260.0,
+      "nota_avaliacao": 7.8,
+      "tipo": "hotel",
+      "distancia_km": 18.0,
+      "diferenciais": ["rede Accor", "economico"],
+      "observacoes": "Hotel economico de rede no ABC."
+    }
+  ],
+  "analise_mercado": {
+    "leitos_ribeirao_pires": 200,
+    "leitos_regiao_abc": 1100,
+    "faixa_diaria_economico": {"min": 120, "max": 200},
+    "faixa_diaria_medio": {"min": 200, "max": 300},
+    "faixa_diaria_superior": {"min": 300, "max": 400},
+    "gap_mercado": "Nao ha hotel upscale em Ribeirao Pires. Visitantes corporativos hospedam em Maua/Santo Andre.",
+    "oportunidade": "Hotel upscale com rooftop e centro de convencoes seria pioneiro e sem concorrente direto na cidade."
+  },
+  "hotel_proposto": {
+    "categoria": "upscale",
+    "quartos_estimados": 55,
+    "leitos_estimados": 110,
+    "diaria_projetada": {"min": 250, "max": 350},
+    "diaria_media_target": 280,
+    "diferenciais": ["rooftop bar panoramico", "restaurante gastronomico", "centro de convencoes", "localizacao central"],
+    "aumento_oferta_local": "40%"
+  }
+}

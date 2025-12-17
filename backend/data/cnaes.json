@@ -1,0 +1,192 @@
+{
+  "cnaes_estrategicos": [
+    {
+      "codigo": "5620-1/01",
+      "descricao": "Fornecimento de alimentos preparados preponderantemente para empresas (buffet)",
+      "setor_hotel": "Buffets/Catering",
+      "relevancia": "parceria",
+      "impacto": "Parceiros para eventos. Possibilidade de pacotes integrados evento+hospedagem."
+    },
+    {
+      "codigo": "5620-1/02",
+      "descricao": "Servicos de alimentacao para eventos e recepcoes (buffet)",
+      "setor_hotel": "Buffets/Catering",
+      "relevancia": "parceria",
+      "impacto": "Parceiros para casamentos e eventos sociais."
+    },
+    {
+      "codigo": "8230-0/01",
+      "descricao": "Servicos de organizacao de feiras, congressos, exposicoes e festas",
+      "setor_hotel": "Organizacao de Eventos",
+      "relevancia": "demanda",
+      "impacto": "Indicador de demanda por espacos de convencoes e hospedagem corporativa."
+    },
+    {
+      "codigo": "5611-2/01",
+      "descricao": "Restaurantes e similares",
+      "setor_hotel": "Restaurantes",
+      "relevancia": "concorrencia",
+      "impacto": "Concorrencia para o restaurante do hotel. Benchmark de mercado gastronomico."
+    },
+    {
+      "codigo": "5611-2/02",
+      "descricao": "Bares e outros estabelecimentos especializados em servir bebidas",
+      "setor_hotel": "Bares",
+      "relevancia": "concorrencia",
+      "impacto": "Concorrencia para o rooftop bar. Analise de vida noturna local."
+    },
+    {
+      "codigo": "5510-8/01",
+      "descricao": "Hoteis",
+      "setor_hotel": "Hospedagem",
+      "relevancia": "concorrencia",
+      "impacto": "Concorrencia direta em hospedagem."
+    },
+    {
+      "codigo": "5510-8/02",
+      "descricao": "Apart-hoteis",
+      "setor_hotel": "Hospedagem",
+      "relevancia": "concorrencia",
+      "impacto": "Concorrencia em hospedagem de longa estadia."
+    },
+    {
+      "codigo": "5590-6/01",
+      "descricao": "Albergues, exceto assistenciais",
+      "setor_hotel": "Hospedagem",
+      "relevancia": "concorrencia",
+      "impacto": "Concorrencia indireta no segmento economico."
+    },
+    {
+      "codigo": "5590-6/02",
+      "descricao": "Campings",
+      "setor_hotel": "Hospedagem",
+      "relevancia": "concorrencia",
+      "impacto": "Alternativa de hospedagem para ecoturismo."
+    },
+    {
+      "codigo": "5590-6/03",
+      "descricao": "Pensoes (alojamento)",
+      "setor_hotel": "Hospedagem",
+      "relevancia": "concorrencia",
+      "impacto": "Concorrencia no segmento economico."
+    },
+    {
+      "codigo": "5590-6/99",
+      "descricao": "Outros alojamentos nao especificados anteriormente (pousadas)",
+      "setor_hotel": "Hospedagem",
+      "relevancia": "concorrencia",
+      "impacto": "Pousadas locais - concorrencia indireta."
+    },
+    {
+      "codigo": "7911-2/00",
+      "descricao": "Agencias de viagens",
+      "setor_hotel": "Turismo",
+      "relevancia": "parceria",
+      "impacto": "Canal de distribuicao. Parcerias para pacotes turisticos."
+    },
+    {
+      "codigo": "7912-1/00",
+      "descricao": "Operadores turisticos",
+      "setor_hotel": "Turismo",
+      "relevancia": "parceria",
+      "impacto": "Parcerias para grupos e excursoes."
+    },
+    {
+      "codigo": "4929-9/01",
+      "descricao": "Transporte rodoviario coletivo de passageiros, sob regime de fretamento, municipal",
+      "setor_hotel": "Transporte Turistico",
+      "relevancia": "parceria",
+      "impacto": "Servicos de transfer e transporte para grupos."
+    },
+    {
+      "codigo": "4929-9/02",
+      "descricao": "Transporte rodoviario coletivo de passageiros, sob regime de fretamento, intermunicipal e interestadual",
+      "setor_hotel": "Transporte Turistico",
+      "relevancia": "parceria",
+      "impacto": "Transporte para eventos e grupos regionais."
+    },
+    {
+      "codigo": "9001-9/01",
+      "descricao": "Producao teatral",
+      "setor_hotel": "Producao de Eventos",
+      "relevancia": "demanda",
+      "impacto": "Indicador de atividade cultural e demanda por espacos."
+    },
+    {
+      "codigo": "9001-9/02",
+      "descricao": "Producao musical",
+      "setor_hotel": "Producao de Eventos",
+      "relevancia": "demanda",
+      "impacto": "Eventos musicais geram demanda por hospedagem."
+    },
+    {
+      "codigo": "9001-9/06",
+      "descricao": "Atividades de sonorizacao e de iluminacao",
+      "setor_hotel": "Producao de Eventos",
+      "relevancia": "fornecedor",
+      "impacto": "Fornecedores para eventos no hotel."
+    },
+    {
+      "codigo": "9329-8/99",
+      "descricao": "Outras atividades de recreacao e lazer nao especificadas anteriormente",
+      "setor_hotel": "Entretenimento",
+      "relevancia": "concorrencia",
+      "impacto": "Casas de festas e espacos de eventos."
+    },
+    {
+      "codigo": "7420-0/01",
+      "descricao": "Atividades de producao de fotografias, exceto aerea e submarina",
+      "setor_hotel": "Fotografia",
+      "relevancia": "parceria",
+      "impacto": "Parceiros para casamentos e eventos."
+    },
+    {
+      "codigo": "7420-0/04",
+      "descricao": "Filmagem de festas e eventos",
+      "setor_hotel": "Fotografia",
+      "relevancia": "parceria",
+      "impacto": "Parceiros para casamentos e eventos."
+    },
+    {
+      "codigo": "7739-0/99",
+      "descricao": "Aluguel de outros meios de transporte nao especificados anteriormente, sem condutor",
+      "setor_hotel": "Aluguel",
+      "relevancia": "fornecedor",
+      "impacto": "Aluguel de materiais para eventos."
+    },
+    {
+      "codigo": "8299-7/99",
+      "descricao": "Outras atividades de servicos prestados principalmente as empresas nao especificadas anteriormente",
+      "setor_hotel": "Servicos Empresariais",
+      "relevancia": "demanda",
+      "impacto": "Empresas de servicos geram demanda corporativa."
+    },
+    {
+      "codigo": "9602-5/01",
+      "descricao": "Cabeleireiros, manicure e pedicure",
+      "setor_hotel": "Beleza",
+      "relevancia": "parceria",
+      "impacto": "Servicos para noivas e eventos."
+    },
+    {
+      "codigo": "9609-2/04",
+      "descricao": "Exploracao de maquinas de servicos pessoais acionadas por moeda",
+      "setor_hotel": "Servicos",
+      "relevancia": "parceria",
+      "impacto": "Decoracao e floricultura para eventos."
+    }
+  ],
+  "setores_resumo": {
+    "Buffets/Catering": {"total_cnaes": 2, "relevancia_principal": "parceria"},
+    "Organizacao de Eventos": {"total_cnaes": 1, "relevancia_principal": "demanda"},
+    "Restaurantes": {"total_cnaes": 1, "relevancia_principal": "concorrencia"},
+    "Bares": {"total_cnaes": 1, "relevancia_principal": "concorrencia"},
+    "Hospedagem": {"total_cnaes": 6, "relevancia_principal": "concorrencia"},
+    "Turismo": {"total_cnaes": 2, "relevancia_principal": "parceria"},
+    "Transporte Turistico": {"total_cnaes": 2, "relevancia_principal": "parceria"},
+    "Producao de Eventos": {"total_cnaes": 3, "relevancia_principal": "demanda"},
+    "Entretenimento": {"total_cnaes": 1, "relevancia_principal": "concorrencia"},
+    "Fotografia": {"total_cnaes": 2, "relevancia_principal": "parceria"},
+    "Servicos": {"total_cnaes": 3, "relevancia_principal": "parceria"}
+  }
+}
