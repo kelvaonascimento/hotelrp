@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   LayoutDashboard, Building2, Calendar, Hotel, TrendingUp,
-  Menu, X, RefreshCw, Wifi, WifiOff
+  Menu, X, RefreshCw, Wifi, WifiOff, FileText
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -10,10 +10,12 @@ import EmpresasChart from './components/EmpresasChart';
 import EventosTimeline from './components/EventosTimeline';
 import ConcorrenciaPanel from './components/ConcorrenciaPanel';
 import ProjecoesPanel from './components/ProjecoesPanel';
+import ResumoExecutivo from './components/ResumoExecutivo';
 import { analyticsApi } from './services/api';
 import { DADOS_VIABILIDADE } from './data/constants';
 
 const NAV_ITEMS = [
+  { id: 'resumo', label: 'Resumo', icon: FileText },
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { id: 'empresas', label: 'Mercado', icon: Building2 },
   { id: 'eventos', label: 'Eventos', icon: Calendar },
@@ -22,7 +24,7 @@ const NAV_ITEMS = [
 ];
 
 function App() {
-  const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeTab, setActiveTab] = useState('resumo');
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -74,6 +76,8 @@ function App() {
     }
 
     switch (activeTab) {
+      case 'resumo':
+        return <ResumoExecutivo onNavigate={setActiveTab} />;
       case 'dashboard':
         return <Dashboard data={data} />;
       case 'empresas':
@@ -85,7 +89,7 @@ function App() {
       case 'projecoes':
         return <ProjecoesPanel data={data} />;
       default:
-        return <Dashboard data={data} />;
+        return <ResumoExecutivo onNavigate={setActiveTab} />;
     }
   };
 
@@ -105,16 +109,19 @@ function App() {
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
 
-            {/* Logo */}
-            <div className="flex items-center gap-3">
+            {/* Logo - Clicavel */}
+            <button
+              onClick={() => setActiveTab('resumo')}
+              className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+            >
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold">
                 RP
               </div>
-              <div className="hidden sm:block">
+              <div className="hidden sm:block text-left">
                 <h1 className="text-lg font-semibold">Hotel RP</h1>
                 <p className="text-xs text-muted-foreground">Dashboard de Viabilidade</p>
               </div>
-            </div>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
